@@ -17,11 +17,14 @@ find_bolt() {
     [[ -x "$custom" ]] && echo "$custom"
     return
   fi
+  # Any BoltAI*.app, so a renamed app (Setapp's "BoltAI 2.app", a later "BoltAI 3.app") is found;
+  # an app without bolt (before 3.0) is skipped.
   local candidate
   for candidate in "$HOME/.local/bin/bolt" \
-    "/Applications/BoltAI.app/Contents/Helpers/bolt" \
-    "$HOME/Applications/BoltAI.app/Contents/Helpers/bolt" \
-    "/Applications/Setapp/BoltAI 2.app/Contents/Helpers/bolt"; do
+    /Applications/BoltAI.app/Contents/Helpers/bolt \
+    /Applications/BoltAI*.app/Contents/Helpers/bolt \
+    "$HOME"/Applications/BoltAI*.app/Contents/Helpers/bolt \
+    /Applications/Setapp/BoltAI*.app/Contents/Helpers/bolt; do
     [[ -x "$candidate" ]] && { echo "$candidate"; return; }
   done
 }
@@ -38,7 +41,7 @@ call_bolt() {
     if [[ -n "${bolt_path:-}" ]]; then
       fail_message="Nothing runnable at $bolt_path. Fix the path in the workflow's configuration."
     else
-      fail_message="Update BoltAI, or install the command-line tool in BoltAI › Settings › General › Command Line."
+      fail_message="Needs BoltAI 3.0 or later, which includes the bolt tool: get it at boltai.com. If BoltAI is somewhere else, set the bolt path in Configure Workflow."
     fi
     return 1
   fi

@@ -36,7 +36,7 @@ This writes `build/BoltAI.alfredworkflow`; open it to install. `src/info.plist` 
 
 ## How it works
 
-- `src/boltai.sh` finds `bolt` (`bolt_path`, then `~/.local/bin/bolt`, then `/Applications/BoltAI.app`, then the Setapp app), runs it and maps its exit codes to messages.
+- `src/boltai.sh` finds `bolt` (`bolt_path`, then `~/.local/bin/bolt`, then any `BoltAI*.app` in `/Applications`, `~/Applications` or `/Applications/Setapp`, so a renamed Setapp app still works), runs it and maps its exit codes to messages.
 - `src/alfred.js` (JavaScript for Automation, built into macOS) formats Alfred's JSON, so the workflow needs no `jq` or Python.
 - Actions set a `next` variable (`paste`, `copy`, `error` or `none`). One Conditional utility routes it to Copy to Clipboard (with or without auto-paste) or to a notification, so a failed run never touches the clipboard. (The legacy Filter utility didn't stop the flow: a failed run pasted whatever was on the clipboard.)
 - ⌘ and ⌥ on a `workflow` or `prompts` row work through the item's `mods` variables plus a connection for that modifier. Items set no top-level `action`; the script defaults to paste.

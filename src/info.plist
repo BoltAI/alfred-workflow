@@ -654,7 +654,7 @@ Keywords (change them in Configure Workflow):
 
 Universal Action: select text, open Universal Actions and choose Run BoltAI Workflow to run a workflow on the selection.
 
-Needs a BoltAI version that includes the bolt tool. The workflow finds it in ~/.local/bin, /Applications/BoltAI.app or the Setapp app; set the bolt path if BoltAI is somewhere else.</string>
+Needs BoltAI 3.0 or later, which includes the bolt tool. The workflow finds it in ~/.local/bin or inside BoltAI in Applications or Setapp; set the bolt path if BoltAI is somewhere else.</string>
 	<key>uidata</key>
 	<dict>
 		<key>13031F25-02CD-57CE-A798-D0B5C7DE6A5A</key>
@@ -862,7 +862,7 @@ Needs a BoltAI version that includes the bolt tool. The workflow finds it in ~/.
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Leave empty to find bolt in ~/.local/bin, /Applications/BoltAI.app or the Setapp app.</string>
+			<string>Leave empty to find bolt in ~/.local/bin or inside BoltAI in Applications or Setapp.</string>
 			<key>label</key>
 			<string>bolt path</string>
 			<key>type</key>
@@ -872,7 +872,7 @@ Needs a BoltAI version that includes the bolt tool. The workflow finds it in ~/.
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string>
 	<key>webaddress</key>
 	<string>https://boltai.com</string>
 </dict>
