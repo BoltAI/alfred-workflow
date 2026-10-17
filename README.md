@@ -16,7 +16,7 @@ Keywords and the `bolt` path are in the workflow's **Configure Workflow** sheet.
 
 Needs [BoltAI](https://boltai.com) 3.0 or later, which includes `bolt`, and Alfred 5 with the [Powerpack](https://www.alfredapp.com/powerpack/).
 
-Download [BoltAI.alfredworkflow](https://github.com/BoltAI/alfred-workflow/releases/latest/download/BoltAI.alfredworkflow) and open it. BoltAI › Settings › Labs links to the same file. To update, download it again and open it; Alfred keeps your keywords and settings.
+In BoltAI, open Settings › Labs and click **Install in Alfred**: BoltAI downloads the latest release to `~/.boltai/alfred/` and Alfred asks to import it. (Inside BoltAI's container, macOS would block Alfred from reading the file.) Or download [BoltAI.alfredworkflow](https://github.com/BoltAI/alfred-workflow/releases/latest/download/BoltAI.alfredworkflow) and open it. To update, install again; Alfred keeps your keywords and settings.
 
 ## Releases
 
